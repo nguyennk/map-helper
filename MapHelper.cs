@@ -76,6 +76,12 @@ public class MapHelper : BaseSettingsPlugin<MapHelperSettings>
             .ToList();
     }
 
+
+    public MapHelper()
+    {
+        Name = "NK Map Helper";
+    }
+
     public override bool Initialise()
     {
         //BannedModifiers = ParseBannedModifiers();
