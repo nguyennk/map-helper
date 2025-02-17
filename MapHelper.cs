@@ -137,12 +137,16 @@ public class MapHelper : BaseSettingsPlugin<MapHelperSettings>
                 }
             }
             // Add inventory items
-            var inventoryItems = GameController
-                .IngameState
-                .ServerData
-                .PlayerInventories[0]
-                .Inventory
-                .InventorySlotItems;
+            // var inventoryItems = GameController
+            //     .IngameState
+            //     .ServerData
+            //     .PlayerInventories[0]
+            //     .Inventory
+            //     .InventorySlotItems;
+
+            var panel = GameController.Game.IngameState.IngameUi.InventoryPanel;
+            var inventoryItems = panel[InventoryIndex.PlayerInventory].VisibleInventoryItems;
+
             foreach (var item in inventoryItems)
             {
                 waystones.Add(
